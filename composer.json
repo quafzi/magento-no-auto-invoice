@@ -1,0 +1,15 @@
+{
+    "name": "quafzi/no-auto-invoice",
+    "type": "magento-module",
+    "description": "Avoid autocreation of invoices and shipments depending on target country",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Birke",
+            "email": "tbirke@netextreme.de"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

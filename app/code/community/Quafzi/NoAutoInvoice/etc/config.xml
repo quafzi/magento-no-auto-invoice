@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Sales
+ * @package    Quafzi_NoAutoInvoice
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     Thomas Birke <tbirke@netextreme.de>
+ */
+-->
+<config>
+    <modules>
+        <Quafzi_NoAutoInvoice>
+            <version>1.0.0</version>
+        </Quafzi_NoAutoInvoice>
+    </modules>
+    <global>
+        <helpers>
+            <quafzi_noautoinvoice>
+                <class>Quafzi_NoAutoInvoice_Helper</class>
+            </quafzi_noautoinvoice>
+        </helpers>
+        <models>
+            <quafzi_noautoinvoice>
+                <class>Quafzi_NoAutoInvoice_Model</class>
+            </quafzi_noautoinvoice>
+        </models>
+        <events>
+            <sales_order_shipment_save_before>
+                <observers>
+                    <validateShipment>
+                        <class>quafzi_noautoinvoice/observer</class>
+                        <method>sales_order_shipment_save_before</method>
+                    </validateShipment>
+                </observers>
+            </sales_order_shipment_save_before>
+            <sales_order_invoice_save_before>
+                <observers>
+                    <validateInvoice>
+                        <class>quafzi_noautoinvoice/observer</class>
+                        <method>sales_order_invoice_save_before</method>
+                    </validateInvoice>
+                </observers>
+            </sales_order_invoice_save_before>
+        </events>
+    </global>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Quafzi_NoAutoInvoice>
+                    <files>
+                        <default>Quafzi_NoAutoInvoice.csv</default>
+                    </files>
+                </Quafzi_NoAutoInvoice>
+            </modules>
+        </translate>
+    </adminhtml>
+    <default>
+        <sales>
+            <invoice>
+                <autocreation_countries>DE</autocreation_countries>
+            </invoice>
+        </sales>
+    </default>
+    <phpunit>
+        <suite>
+            <modules>
+                <Quafzi_NoAutoInvoice />
+            </modules>
+        </suite>
+    </phpunit>
+</config>
+

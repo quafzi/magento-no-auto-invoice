@@ -1,0 +1,3 @@
+app/etc/modules/Quafzi_NoAutoInvoice.xml app/etc/modules/Quafzi_NoAutoInvoice.xml
+app/code/community/Quafzi/NoAutoInvoice app/code/community/Quafzi/NoAutoInvoice
+app/locale/de_DE/Quafzi_NoAutoInvoice.csv app/locale/de_DE/Quafzi_NoAutoInvoice.csv
