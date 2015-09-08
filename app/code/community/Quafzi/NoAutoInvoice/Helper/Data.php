@@ -14,7 +14,7 @@ class Quafzi_NoAutoInvoice_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function isManualInvoiceCreation()
     {
-        $allowedControllerNames = ['sales_order_invoice', 'sales_order_creditmemo'];
+        $allowedControllerNames = ['sales_order_invoice', 'sales_order_creditmemo', 'sales_order_shipment'];
         return (Mage::app()->getRequest()
             && 'save' === Mage::app()->getRequest()->getActionName()
             && in_array(Mage::app()->getRequest()->getControllerName(), $allowedControllerNames)
